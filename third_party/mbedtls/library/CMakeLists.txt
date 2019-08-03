@@ -3,6 +3,7 @@
 # ------------------------------------------------------------------------------
 
 include_directories(${CMAKE_CURRENT_LIST_DIR}/../configs)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/../include)
 
 set(src_crypto
     aes.c
@@ -92,6 +93,10 @@ set(src_tls
     ssl_tls.c
 )
 
-add_library(MBEDTLS_CRYPTO_OBJ OBJECT ${src_crypto} ${src_x509} ${src_tls})
-set_property(TARGET MBEDTLS_CRYPTO_OBJ PROPERTY POSITION_INDEPENDENT_CODE ON)
+add_library(MBEDTLS_CRYPTO_STATIC STATIC ${src_crypto} ${src_x509} ${src_tls})
+target_compile_definitions(MBEDTLS_CRYPTO_STATIC PRIVATE "MBEDTLS_CONFIG_FILE\\=<config-no-tls.h>")
+set_target_properties(MBEDTLS_CRYPTO_STATIC PROPERTIES OUTPUT_NAME mbedtls)
+set_property(TARGET MBEDTLS_CRYPTO_STATIC PROPERTY POSITION_INDEPENDENT_CODE ON)
+target_link_libraries(MBEDTLS_CRYPTO_STATIC pthread)
+
 
