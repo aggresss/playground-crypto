@@ -55,7 +55,7 @@ int main(void)
     mbedtls_md_init(&sha_ctx);
     memset(digest, 0x00, sizeof(digest));
 
-    ret = mbedtls_md_setup(&sha_ctx, mbedtls_md_info_from_type(MBEDTLS_MD_SHA256), 1);
+    ret = mbedtls_md_setup(&sha_ctx, mbedtls_md_info_from_type(MBEDTLS_MD_SHA1), 1);
     if (ret != 0)
     {
         mbedtls_printf("  ! mbedtls_md_setup() returned -0x%04x\n", -ret);
