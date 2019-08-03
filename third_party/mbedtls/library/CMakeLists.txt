@@ -2,8 +2,8 @@
 # CMakeLists.txt for playground-crypto/third_party/mbedtls/library
 # ------------------------------------------------------------------------------
 
-include_directories(${CMAKE_CURRENT_LIST_DIR}/../configs)
-include_directories(${CMAKE_CURRENT_LIST_DIR}/../include)
+include_directories(${MBEDTLS_DIRS}/configs)
+include_directories(${MBEDTLS_DIRS}/include)
 
 set(src_crypto
     aes.c

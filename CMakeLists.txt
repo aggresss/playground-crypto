@@ -140,6 +140,9 @@ endif()
 # Subdirectory
 # ------------------------------------------------------------------------------
 
+set(THIRD_PARTY_DIRS ${CMAKE_CURRENT_LIST_DIR}/third_party)
+set(MBEDTLS_DIRS ${THIRD_PARTY_DIRS}/mbedtls)
+
 add_subdirectory(third_party)
 add_subdirectory(examples)
 
