@@ -126,8 +126,10 @@ if(BUILD_VERSION)
 endif()
 
 # ------------------------------------------------------------------------------
-# target static and shared
+# Project options
 # ------------------------------------------------------------------------------
+
+option(BUILD_ALL "Build all submodule" OFF)
 
 option(BUILD_STATIC "Build static library." ON)
 option(BUILD_SHARED "Build shared library." OFF)
