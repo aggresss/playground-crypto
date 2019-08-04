@@ -4,7 +4,7 @@ language: c
 compiler: gcc
 
 script:
-  - cmake -DCMAKE_BUILD_TYPE:String="Coverage" .
+  - cmake -DBUILD_ALL=ON -DCMAKE_BUILD_TYPE:String="Coverage" ./
   - make
   - ctest -T Test --timeout 600 -VV
   - ctest -T MemCheck --timeout 600
