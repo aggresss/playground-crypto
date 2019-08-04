@@ -1,2 +1,1 @@
 # playground-crypto
-playground-crypto
