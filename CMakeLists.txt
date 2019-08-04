@@ -137,6 +137,36 @@ if (NOT BUILD_STATIC AND NOT BUILD_SHARED)
 endif()
 
 # ------------------------------------------------------------------------------
+# Test
+# ------------------------------------------------------------------------------
+
+option(ENABLE_TESTING "Build tests." ON)
+
+if(ENABLE_TESTING)
+  find_program(VALGRIND valgrind)
+  if(VALGRIND)
+    # Ctest configuration variables must be set BEFORE include(Ctest)
+    set(MEMORYCHECK_COMMAND ${VALGRIND})
+    # Check process children and give detail for each leak
+    set(MEMORYCHECK_COMMAND_OPTIONS
+      "${MEMORYCHECK_COMMAND_OPTIONS} --leak-check=yes --show-reachable=no --undef-value-errors=no")
+    set(MEMORYCHECK_COMMAND_OPTIONS
+      "${MEMORYCHECK_COMMAND_OPTIONS} --trace-children=yes --track-fds=no --track-origins=no")
+    # Set error code.
+    set(MEMORYCHECK_COMMAND_OPTIONS
+      "${MEMORYCHECK_COMMAND_OPTIONS} --error-exitcode=255")
+    # Generate suppression hint.
+    set(MEMORYCHECK_COMMAND_OPTIONS
+      "${MEMORYCHECK_COMMAND_OPTIONS} --gen-suppressions=all")
+    # Set suppression file
+    set(MEMORYCHECK_COMMAND_OPTIONS
+      "${MEMORYCHECK_COMMAND_OPTIONS} --suppressions=${CMAKE_CURRENT_LIST_DIR}/valgrind.supp")
+  endif()
+  include (CTest)
+  enable_testing()
+endif()
+
+# ------------------------------------------------------------------------------
 # Subdirectory
 # ------------------------------------------------------------------------------
 
@@ -145,4 +175,5 @@ set(MBEDTLS_DIRS ${THIRD_PARTY_DIRS}/mbedtls)
 
 add_subdirectory(third_party)
 add_subdirectory(examples)
+
 
