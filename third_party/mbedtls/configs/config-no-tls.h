@@ -12,7 +12,6 @@
 
 
 /* mbed TLS modules */
-#define MBEDTLS_AES_C
 #define MBEDTLS_MD_C
 #define MBEDTLS_MD5_C
 #define MBEDTLS_SHA1_C
