@@ -412,7 +412,6 @@ int mbedtls_base64_urlsafe_decode( unsigned char *dst, size_t dlen, size_t *olen
     return( 0 );
 }
 
-
 #if defined(MBEDTLS_SELF_TEST)
 
 static const unsigned char base64_test_dec[64] =
