@@ -15,9 +15,7 @@
 #define _CRT_SECURE_NO_DEPRECATE 1
 #endif
 
-/**
- * \name SECTION: System support
- */
+/* ======================== System support ======================== */
 
 #define MBEDTLS_HAVE_ASM
 //#define MBEDTLS_NO_UDBL_DIVISION
@@ -38,9 +36,7 @@
 //#define MBEDTLS_DEPRECATED_REMOVED
 //#define MBEDTLS_CHECK_PARAMS
 
-/**
- * \name SECTION: mbed TLS feature support
- */
+/* ==================== mbed TLS feature support ==================== */
 
 //#define MBEDTLS_TIMING_ALT
 //#define MBEDTLS_AES_ALT
@@ -194,9 +190,7 @@
 #define MBEDTLS_X509_RSASSA_PSS_SUPPORT
 //#define MBEDTLS_ZLIB_SUPPORT
 
-/**
- * \name SECTION: mbed TLS modules
- */
+/* ==================== mbed TLS modules ==================== */
 
 #define MBEDTLS_AESNI_C
 #define MBEDTLS_AES_C
@@ -270,9 +264,7 @@
 #define MBEDTLS_X509_CSR_WRITE_C
 #define MBEDTLS_XTEA_C
 
-/**
- * \name SECTION: Module configuration options
- */
+/* ==================== Module configuration options ==================== */
 
 /* MPI / BIGNUM options */
 //#define MBEDTLS_MPI_WINDOW_SIZE            6 /**< Maximum windows size used. */
