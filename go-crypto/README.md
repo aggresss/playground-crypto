@@ -24,3 +24,19 @@ sha512   | Package sha512 implements the SHA-384, SHA-512, SHA-512/224, and SHA-
 subtle   | Package subtle implements functions that are often useful in cryptographic code but require careful thought to use correctly.
 tls      | Package tls partially implements TLS 1.2, as specified in RFC 5246, and TLS 1.3, as specified in RFC 8446.
 x509     | Package x509 implements a subset of the X.509 standard.
+
+https://pkg.go.dev/encoding
+
+Directory | Description
+--|--
+ascii85 | Package ascii85 implements the ascii85 data encoding as used in the btoa tool and Adobe's PostScript and PDF document formats.
+asn1    | Package asn1 implements parsing of DER-encoded ASN.1 data structures, as defined in ITU-T Rec X.690.
+base32  | Package base32 implements base32 encoding as specified by RFC 4648.
+base64  | Package base64 implements base64 encoding as specified by RFC 4648.
+binary  | Package binary implements simple translation between numbers and byte sequences and encoding and decoding of varints.
+csv     | Package csv reads and writes comma-separated values (CSV) files.
+gob     | Package gob manages streams of gobs - binary values exchanged between an Encoder (transmitter) and a Decoder (receiver).
+hex     | Package hex implements hexadecimal encoding and decoding.
+json    | Package json implements encoding and decoding of JSON as defined in RFC 7159.
+pem     | Package pem implements the PEM data encoding, which originated in Privacy Enhanced Mail.
+xml     | Package xml implements a simple XML 1.0 parser that understands XML name spaces.
