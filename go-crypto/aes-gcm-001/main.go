@@ -21,6 +21,9 @@ func encrypt(plaintext, key, nonce []byte) []byte {
 
 	ciphertext := aesgcm.Seal(nil, nonce, plaintext, nil)
 
+	fmt.Println("Encrypt Overhead:", aesgcm.Overhead())
+	fmt.Println("Encrypt NonceSize:", aesgcm.NonceSize())
+
 	return ciphertext
 }
 
@@ -39,6 +42,10 @@ func decrypt(ciphertext, key, nonce []byte) []byte {
 	if err != nil {
 		panic(err.Error())
 	}
+
+	fmt.Println("Decrypt Overhead:", aesgcm.Overhead())
+	fmt.Println("Decrypt NonceSize:", aesgcm.NonceSize())
+
 	return plaintext
 }
 
